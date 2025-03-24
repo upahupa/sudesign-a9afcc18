@@ -25,7 +25,7 @@ export const projectImages = {
     "/lovable-uploads/9f59f1bd-8831-48f8-8a96-e8043855ab88.png",
     "/lovable-uploads/534ec198-c079-40b4-b880-09217d138a57.png",
     "/lovable-uploads/7a6c1a6d-56c7-4b2a-8b74-593b2ca0526b.png",
-    "/lovable-uploads/7dec2573-1587-4f15-b1e1-5b6289858ad3.png"
+    "/lovable-uploads/d24f8533-215e-4280-b160-35d98f6c3961.png"
   ]
 };
 

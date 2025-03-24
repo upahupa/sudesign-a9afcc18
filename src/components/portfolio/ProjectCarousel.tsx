@@ -25,19 +25,25 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   return (
     <Carousel className="w-full">
       <CarouselContent>
-        {images.map((image, index) => (
-          <CarouselItem key={index}>
-            <AspectRatio ratio={16 / 9}>
-              <div className={`w-full h-full flex items-center justify-center ${image.includes('PF MAP_port fairy map.png') ? 'bg-[#e3e3e3]' : ''}`}>
-                <img 
-                  src={image} 
-                  alt={`${projectName} image ${index + 1}`} 
-                  className={`${image.includes('PF MAP_port fairy map.png') ? 'object-contain max-w-full max-h-full' : 'object-cover w-full h-full'} rounded-none`}
-                />
-              </div>
-            </AspectRatio>
-          </CarouselItem>
-        ))}
+        {images.map((image, index) => {
+          // Check if this is the Port Fairy map image
+          const isPortFairyMap = projectName === "Port Fairy Folk Festival" && 
+                                image.includes("d24f8533-215e-4280-b160-35d98f6c3961");
+
+          return (
+            <CarouselItem key={index}>
+              <AspectRatio ratio={16 / 9}>
+                <div className={`w-full h-full flex items-center justify-center ${isPortFairyMap ? 'bg-[#e3e3e3]' : ''}`}>
+                  <img 
+                    src={image} 
+                    alt={`${projectName} image ${index + 1}`} 
+                    className={`${isPortFairyMap ? 'object-contain max-w-full max-h-full' : 'object-cover w-full h-full'} rounded-none`}
+                  />
+                </div>
+              </AspectRatio>
+            </CarouselItem>
+          );
+        })}
         {includeYoutubeVideo && (
           <CarouselItem>
             <AspectRatio ratio={16 / 9}>

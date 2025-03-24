@@ -44,10 +44,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     "/lovable-uploads/0dba80e4-20cf-4402-930e-960d3d4c0e87.png"
   ];
 
+  const portFairyFolkFestivalImages = [
+    "/lovable-uploads/9f59f1bd-8831-48f8-8a96-e8043855ab88.png",
+    "/lovable-uploads/534ec198-c079-40b4-b880-09217d138a57.png",
+    "/lovable-uploads/7a6c1a6d-56c7-4b2a-8b74-593b2ca0526b.png",
+    "/lovable-uploads/7dec2573-1587-4f15-b1e1-5b6289858ad3.png"
+  ];
+
   const isNationalBowelProject = project.name === "National Bowel Cancer Screening Program";
   const isHaloProject = project.name === "Halo";
   const isCraftVictoriaProject = project.name === "Craft Victoria";
-  const shouldShowCarousel = isNationalBowelProject || isHaloProject || isCraftVictoriaProject;
+  const isPortFairyFolkFestivalProject = project.name === "Port Fairy Folk Festival";
+  
+  const shouldShowCarousel = isNationalBowelProject || isHaloProject || isCraftVictoriaProject || isPortFairyFolkFestivalProject;
   
   // Select the appropriate images based on the project
   let carouselImages = [];
@@ -57,6 +66,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     carouselImages = haloProjectImages;
   } else if (isCraftVictoriaProject) {
     carouselImages = craftVictoriaImages;
+  } else if (isPortFairyFolkFestivalProject) {
+    carouselImages = portFairyFolkFestivalImages;
   }
 
   return (
@@ -83,6 +94,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     </AspectRatio>
                   </CarouselItem>
                 ))}
+                {isPortFairyFolkFestivalProject && (
+                  <CarouselItem>
+                    <AspectRatio ratio={16 / 9}>
+                      <iframe
+                        src="https://www.youtube.com/embed/7fMNFlj5zdw"
+                        title="Port Fairy Folk Festival Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full rounded-none"
+                      ></iframe>
+                    </AspectRatio>
+                  </CarouselItem>
+                )}
               </CarouselContent>
               <CarouselPrevious className="left-2" />
               <CarouselNext className="right-2" />

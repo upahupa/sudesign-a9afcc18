@@ -37,7 +37,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                   <img 
                     src={image} 
                     alt={`${projectName} image ${index + 1}`} 
-                    className={`${isPortFairyMap ? 'object-contain max-w-full max-h-full' : 'object-cover w-full h-full'} rounded-none`}
+                    className={`${isPortFairyMap ? 'object-contain w-full h-full' : 'object-cover w-full h-full'} rounded-none`}
                   />
                 </div>
               </AspectRatio>

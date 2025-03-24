@@ -89,9 +89,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                       <img 
                         src={image} 
                         alt={`${project.name} image ${index + 1}`} 
-                        className={`w-full h-full rounded-none ${
-                          isPortFairyFolkFestivalProject && index === 2 ? "object-contain" : "object-cover"
-                        }`}
+                        className="object-cover w-full h-full rounded-none"
                       />
                     </AspectRatio>
                   </CarouselItem>

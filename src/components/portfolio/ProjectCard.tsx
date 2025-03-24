@@ -86,11 +86,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {carouselImages.map((image, index) => (
                   <CarouselItem key={index}>
                     <AspectRatio ratio={16 / 9}>
-                      <img 
-                        src={image} 
-                        alt={`${project.name} image ${index + 1}`} 
-                        className="object-cover w-full h-full rounded-none"
-                      />
+                      <div className={`w-full h-full flex items-center justify-center ${image.includes('PF MAP_port fairy map.png') ? 'bg-[#e3e3e3]' : ''}`}>
+                        <img 
+                          src={image} 
+                          alt={`${project.name} image ${index + 1}`} 
+                          className={`${image.includes('PF MAP_port fairy map.png') ? 'object-contain max-w-full max-h-full' : 'object-cover w-full h-full'} rounded-none`}
+                        />
+                      </div>
                     </AspectRatio>
                   </CarouselItem>
                 ))}

@@ -1,13 +1,8 @@
 
 import React from "react";
 import ProjectDetail from "./ProjectDetail";
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from "@/components/ui/carousel";
+import ProjectCarousel from "./ProjectCarousel";
+import { hasProjectImages, getProjectImages, shouldIncludeYoutubeVideo } from "./projectImageData";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ProjectCardProps {
@@ -20,55 +15,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  // Define project-specific images
-  const bowelProjectImages = [
-    "/lovable-uploads/b264075a-dc00-49af-84b9-535cfe457925.png",
-    "/lovable-uploads/5034b600-c4f4-49d5-83b9-a1973faad927.png",
-    "/lovable-uploads/37baa30c-f0d2-4fd2-b00f-3b5570a3cd9e.png",
-    "/lovable-uploads/4001b3c4-eba2-40bd-baa0-23dbb6f393d1.png"
-  ];
-
-  const haloProjectImages = [
-    "/lovable-uploads/539c41bb-4018-4ad4-86c3-0fe45274ccc5.png",
-    "/lovable-uploads/6aa931ee-79c7-45b5-888a-eb82ee7b2f73.png",
-    "/lovable-uploads/cf29f845-1f99-4e8c-b3a0-10fe16cd98b6.png",
-    "/lovable-uploads/1bb4bdc0-e979-4b96-94eb-3ca6b03b3219.png",
-    "/lovable-uploads/2768bd6f-6d32-468c-8064-ffcbff268b9d.png",
-    "/lovable-uploads/1a9c583f-0f64-4e1e-b557-5ecdac8da1f2.png"
-  ];
-
-  const craftVictoriaImages = [
-    "/lovable-uploads/ac64d2d3-3ed9-49d8-b759-6af8505505fd.png", // mockcover.png
-    "/lovable-uploads/eb42d85e-124d-4ff6-a6ac-074b1ba444d4.png", 
-    "/lovable-uploads/ff564cb7-92aa-4b51-bb58-c06093108920.png", 
-    "/lovable-uploads/0dba80e4-20cf-4402-930e-960d3d4c0e87.png"
-  ];
-
-  const portFairyFolkFestivalImages = [
-    "/lovable-uploads/9f59f1bd-8831-48f8-8a96-e8043855ab88.png",
-    "/lovable-uploads/534ec198-c079-40b4-b880-09217d138a57.png",
-    "/lovable-uploads/7a6c1a6d-56c7-4b2a-8b74-593b2ca0526b.png",
-    "/lovable-uploads/7dec2573-1587-4f15-b1e1-5b6289858ad3.png"
-  ];
-
-  const isNationalBowelProject = project.name === "National Bowel Cancer Screening Program";
-  const isHaloProject = project.name === "Halo";
-  const isCraftVictoriaProject = project.name === "Craft Victoria";
-  const isPortFairyFolkFestivalProject = project.name === "Port Fairy Folk Festival";
-  
-  const shouldShowCarousel = isNationalBowelProject || isHaloProject || isCraftVictoriaProject || isPortFairyFolkFestivalProject;
-  
-  // Select the appropriate images based on the project
-  let carouselImages = [];
-  if (isNationalBowelProject) {
-    carouselImages = bowelProjectImages;
-  } else if (isHaloProject) {
-    carouselImages = haloProjectImages;
-  } else if (isCraftVictoriaProject) {
-    carouselImages = craftVictoriaImages;
-  } else if (isPortFairyFolkFestivalProject) {
-    carouselImages = portFairyFolkFestivalImages;
-  }
+  const showCarousel = hasProjectImages(project.name);
+  const projectImages = getProjectImages(project.name);
+  const includeYoutubeVideo = shouldIncludeYoutubeVideo(project.name);
 
   return (
     <div className="w-full mb-3">
@@ -79,40 +28,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <ProjectDetail label="YEAR" value={project.year} />
       </div>
       <div className="flex gap-px max-md:flex-col max-sm:mt-3">
-        {shouldShowCarousel ? (
+        {showCarousel ? (
           <div className="w-[1248px] max-md:w-full">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {carouselImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <AspectRatio ratio={16 / 9}>
-                      <div className={`w-full h-full flex items-center justify-center ${image.includes('PF MAP_port fairy map.png') ? 'bg-[#e3e3e3]' : ''}`}>
-                        <img 
-                          src={image} 
-                          alt={`${project.name} image ${index + 1}`} 
-                          className={`${image.includes('PF MAP_port fairy map.png') ? 'object-contain max-w-full max-h-full' : 'object-cover w-full h-full'} rounded-none`}
-                        />
-                      </div>
-                    </AspectRatio>
-                  </CarouselItem>
-                ))}
-                {isPortFairyFolkFestivalProject && (
-                  <CarouselItem>
-                    <AspectRatio ratio={16 / 9}>
-                      <iframe
-                        src="https://www.youtube.com/embed/7fMNFlj5zdw"
-                        title="Port Fairy Folk Festival Video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full rounded-none"
-                      ></iframe>
-                    </AspectRatio>
-                  </CarouselItem>
-                )}
-              </CarouselContent>
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
-            </Carousel>
+            <ProjectCarousel 
+              projectName={project.name} 
+              images={projectImages} 
+              includeYoutubeVideo={includeYoutubeVideo}
+            />
           </div>
         ) : (
           <div className="w-[1248px] h-[720px] bg-[#E3E3E3] max-md:w-full" />

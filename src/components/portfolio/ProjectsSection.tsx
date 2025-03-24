@@ -1,3 +1,4 @@
+
 import React from "react";
 import ProjectCard from "./ProjectCard";
 
@@ -22,6 +23,12 @@ const ProjectsSection: React.FC = () => {
       year: "2023",
     },
     {
+      name: "Formnt studio",
+      service: "Web Design & Development",
+      type: "Studio",
+      year: "2024",
+    },
+    {
       name: "Brunswick Makerspace",
       service: "Rebrand",
       type: "Portfolio",
@@ -43,12 +50,6 @@ const ProjectsSection: React.FC = () => {
       name: "AGL",
       service: "Service Design & UX",
       type: "Portfolio",
-      year: "2024",
-    },
-    {
-      name: "Formnt studio",
-      service: "Web Design & Development",
-      type: "Studio",
       year: "2024",
     },
   ];

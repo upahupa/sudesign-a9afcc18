@@ -37,12 +37,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     "/lovable-uploads/1a9c583f-0f64-4e1e-b557-5ecdac8da1f2.png"
   ];
 
+  const craftVictoriaImages = [
+    "/lovable-uploads/ac64d2d3-3ed9-49d8-b759-6af8505505fd.png", // mockcover.png
+    "/lovable-uploads/eb42d85e-124d-4ff6-a6ac-074b1ba444d4.png", 
+    "/lovable-uploads/ff564cb7-92aa-4b51-bb58-c06093108920.png", 
+    "/lovable-uploads/0dba80e4-20cf-4402-930e-960d3d4c0e87.png"
+  ];
+
   const isNationalBowelProject = project.name === "National Bowel Cancer Screening Program";
   const isHaloProject = project.name === "Halo";
-  const shouldShowCarousel = isNationalBowelProject || isHaloProject;
+  const isCraftVictoriaProject = project.name === "Craft Victoria";
+  const shouldShowCarousel = isNationalBowelProject || isHaloProject || isCraftVictoriaProject;
   
   // Select the appropriate images based on the project
-  const carouselImages = isNationalBowelProject ? bowelProjectImages : isHaloProject ? haloProjectImages : [];
+  let carouselImages = [];
+  if (isNationalBowelProject) {
+    carouselImages = bowelProjectImages;
+  } else if (isHaloProject) {
+    carouselImages = haloProjectImages;
+  } else if (isCraftVictoriaProject) {
+    carouselImages = craftVictoriaImages;
+  }
 
   return (
     <div className="w-full mb-3">

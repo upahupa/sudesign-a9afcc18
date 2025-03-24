@@ -28,6 +28,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     "/lovable-uploads/4001b3c4-eba2-40bd-baa0-23dbb6f393d1.png"
   ];
 
+  const isNationalBowelProject = project.name === "National Bowel Cancer Screening Program";
+
   return (
     <div className="w-full mb-3">
       <div className="flex mb-3 max-md:flex-wrap">
@@ -37,25 +39,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <ProjectDetail label="YEAR" value={project.year} />
       </div>
       <div className="flex gap-px max-md:flex-col max-sm:mt-3">
-        <div className="w-[1248px] max-md:w-full">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {projectImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <AspectRatio ratio={16 / 9}>
-                    <img 
-                      src={image} 
-                      alt={`${project.name} image ${index + 1}`} 
-                      className="object-cover w-full h-full rounded-none"
-                    />
-                  </AspectRatio>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
-          </Carousel>
-        </div>
+        {isNationalBowelProject ? (
+          <div className="w-[1248px] max-md:w-full">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {projectImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <AspectRatio ratio={16 / 9}>
+                      <img 
+                        src={image} 
+                        alt={`${project.name} image ${index + 1}`} 
+                        className="object-cover w-full h-full rounded-none"
+                      />
+                    </AspectRatio>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </div>
+        ) : (
+          <div className="w-[1248px] h-[720px] bg-[#E3E3E3] max-md:w-full" />
+        )}
         <div className="w-[624px] h-[720px] bg-[#E3E3E3] max-md:w-full" />
       </div>
     </div>

@@ -23,10 +23,10 @@ const ProjectsSection: React.FC = () => {
       year: "2023",
     },
     {
-      name: "Formnt studio",
-      service: "Web Design & Development",
-      type: "Studio",
-      year: "2024",
+      name: "Port Fairy Folk Festival",
+      service: "Rebrand",
+      type: "Portfolio",
+      year: "2023",
     },
     {
       name: "Brunswick Makerspace",
@@ -38,7 +38,7 @@ const ProjectsSection: React.FC = () => {
       name: "Anika Legal",
       service: "Service Design & UX",
       type: "Advocacy",
-      year: "2020",
+      year: "2021",
     },
     {
       name: "Monash Gallery of Art",

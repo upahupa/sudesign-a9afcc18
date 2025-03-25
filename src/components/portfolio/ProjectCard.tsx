@@ -42,27 +42,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         ) : (
           <div className="w-[1248px] h-[720px] bg-[#E3E3E3] max-md:w-full" />
         )}
-        <div className="w-[624px] aspect-[16/9] bg-[#E3E3E3] max-md:w-full" />
+        
+        {isNBCSP ? (
+          <div className="w-[624px] aspect-[16/9] bg-[#E3E3E3] max-md:w-full p-4 overflow-y-auto">
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+              BRIEF
+            </div>
+            <div className="text-[13px] text-[#1C1C1C] leading-[17px] mb-4">
+              The Aikenhead Centre for Medical Discovery (ACMD) partnered with Swinburne to improve the National Bowel Cancer Screening Program (NBSP) by enhancing user-centered design and increasing participation rates.
+            </div>
+            
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+              RATIONALE
+            </div>
+            <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
+              Through ethnographic research with screening participants, we identified key barriers to user participation. Our design solutions included simplifying instructions, integrating journey mapping, and recommending digital reminders and optional drop-off locations. We developed a digital instructions prototype accessible via QR code and redesigned forms to reduce redundancy, enhance accessibility, and improve perceived anonymity.
+            </div>
+          </div>
+        ) : (
+          <div className="w-[624px] aspect-[16/9] bg-[#E3E3E3] max-md:w-full" />
+        )}
       </div>
-      
-      {/* Add brief and rationale for National Bowel Cancer Screening Program */}
-      {isNBCSP && (
-        <div className="mt-6 px-3">
-          <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
-            BRIEF
-          </div>
-          <div className="text-[13px] text-[#1C1C1C] leading-[17px] mb-4">
-            The Aikenhead Centre for Medical Discovery (ACMD) partnered with Swinburne to improve the National Bowel Cancer Screening Program (NBSP) by enhancing user-centered design and increasing participation rates.
-          </div>
-          
-          <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
-            RATIONALE
-          </div>
-          <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
-            Through ethnographic research with screening participants, we identified key barriers to user participation. Our design solutions included simplifying instructions, integrating journey mapping, and recommending digital reminders and optional drop-off locations. We developed a digital instructions prototype accessible via QR code and redesigned forms to reduce redundancy, enhance accessibility, and improve perceived anonymity.
-          </div>
-        </div>
-      )}
     </div>
   );
 };

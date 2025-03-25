@@ -1,3 +1,4 @@
+
 import React from "react";
 import ProjectDetail from "./ProjectDetail";
 import ProjectCarousel from "./ProjectCarousel";
@@ -24,6 +25,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const isNBCSP = project.name === "National Bowel Cancer Screening Program";
   // Check if this is the Halo project
   const isHalo = project.name === "Halo";
+  // Check if this is the Craft Victoria project
+  const isCraftVictoria = project.name === "Craft Victoria";
   
   return <div className="w-full mb-3">
       <div className="flex mb-3 justify-between max-md:flex-wrap">
@@ -65,6 +68,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
             <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
               The essence of these designs draw on the motion that is associated with Halo. Creating a sense of flux within the brand, my intention was to associate the product alongside flowing water, and the infinite tessellation contained within liquid properties. With this product, I aimed to instill the immanent properties of becoming free flowing within the customer.
+            </div>
+          </div>
+        : isCraftVictoria ? <div className="w-[624px] aspect-[16/9] max-md:w-full p-4 overflow-y-auto bg-white py-[17px]">
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+              BRIEF
+            </div>
+            <div className="text-[13px] text-[#1C1C1C] leading-[17px] mb-4">
+              The 2022 Annual Review for Craft Victoria aimed to showcase the organization's position as the state's authoritative body on craft, featuring a range of content including financial reviews, corporate statements, upcoming events, and featured artists.
+            </div>
+            
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+              RATIONALE
+            </div>
+            <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
+              The design evoked a sense of materiality, reflecting Craft Victoria's diverse engagement with various materials. It created a past-future dichotomy, blending traditional craftsmanship with modern computer-assisted designs, while ensuring legibility and clarity in the format of an annual review.
             </div>
           </div>
         : <div className="w-[624px] aspect-[16/9] bg-[#E3E3E3] max-md:w-full" />}

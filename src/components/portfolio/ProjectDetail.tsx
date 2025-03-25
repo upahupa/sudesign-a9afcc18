@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface ProjectDetailProps {
@@ -13,9 +14,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
 }) => {
   return (
     <div
-      className={`w-[312px] px-3 py-0 max-md:w-6/12 max-sm:w-full ${className}`}
+      className={`flex-1 px-3 py-0 max-md:w-6/12 max-sm:w-full ${className}`}
     >
-      <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+      <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5 uppercase">
         {label}
       </div>
       <div className="text-[13px] text-[#1C1C1C] leading-[17px]">{value}</div>

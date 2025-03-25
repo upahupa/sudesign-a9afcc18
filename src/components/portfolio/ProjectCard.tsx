@@ -1,9 +1,9 @@
-
 import React from "react";
 import ProjectDetail from "./ProjectDetail";
 import ProjectCarousel from "./ProjectCarousel";
 import { hasProjectImages, getProjectImages, shouldIncludeYoutubeVideo } from "./projectImageData";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 interface ProjectCardProps {
   project: {
     name: string;
@@ -12,6 +12,7 @@ interface ProjectCardProps {
     year: string;
   };
 }
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project
 }) => {
@@ -25,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const isHalo = project.name === "Halo";
   
   return <div className="w-full mb-3">
-      <div className="flex mb-3 max-md:flex-wrap">
+      <div className="flex mb-3 justify-between max-md:flex-wrap">
         <ProjectDetail label="PROJECT" value={project.name} />
         <ProjectDetail label="SERVICE" value={project.service} />
         <ProjectDetail label="TYPE" value={project.type} />

@@ -25,7 +25,13 @@ export const projectImages = {
     "/lovable-uploads/9f59f1bd-8831-48f8-8a96-e8043855ab88.png",
     "/lovable-uploads/534ec198-c079-40b4-b880-09217d138a57.png",
     "/lovable-uploads/7a6c1a6d-56c7-4b2a-8b74-593b2ca0526b.png",
-    "/lovable-uploads/72dab154-f965-47a7-86b1-26a7fd24e907.png" // Replaced the map image with the new one
+    "/lovable-uploads/72dab154-f965-47a7-86b1-26a7fd24e907.png"
+  ],
+  "Brunswick Makerspace": [
+    "/lovable-uploads/eaa89240-59ae-4732-bdf3-66501833f078.png",
+    "/lovable-uploads/9fd7806f-5a2c-418f-8c70-e5cd7b8ceacf.png",
+    "/lovable-uploads/516501b6-6ce4-49ee-836f-fb24358f06f0.png",
+    "/lovable-uploads/395189ee-377e-4fe2-8962-4bf9d7352c97.png"
   ]
 };
 

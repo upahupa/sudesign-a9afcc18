@@ -39,7 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         ) : (
           <div className="w-[1248px] h-[720px] bg-[#E3E3E3] max-md:w-full" />
         )}
-        <div className="w-[624px] h-[720px] bg-[#E3E3E3] max-md:w-full" />
+        <div className="w-[624px] aspect-[16/9] bg-[#E3E3E3] max-md:w-full" />
       </div>
     </div>
   );

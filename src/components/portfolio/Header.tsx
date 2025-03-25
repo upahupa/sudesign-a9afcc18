@@ -1,4 +1,3 @@
-
 import React from "react";
 import InfoSection from "./InfoSection";
 import AboutSection from "./AboutSection";
@@ -14,10 +13,6 @@ const Header: React.FC = () => {
     { title: "Monash Gallery of Art" },
     { title: "AGL" },
     { title: "Climate Reality Project" },
-  ];
-
-  const contact = [
-    { title: "Email" }
   ];
 
   const capabilities = [
@@ -60,17 +55,17 @@ const Header: React.FC = () => {
     "Additionally, Samuel's work is deeply influenced by his curiosity for culture, history, and the interconnectedness of local and digital communities. This perspective allows him to approach projects with a nuanced understanding of context, ensuring solutions that feel authentic, meaningful, and grounded in the world they serve.",
   ];
 
+  const contact = [{ title: "Email" }, { title: "Instagram" }];
+
   return (
     <header>
       <div className="flex gap-6 px-6 py-9 max-md:flex-wrap max-sm:px-4 max-sm:py-6">
-        <div className="flex flex-col gap-6">
-          <InfoSection title="WORKS" items={works} />
-          <InfoSection title="CONTACT" items={contact} className="mt-6" />
-        </div>
+        <InfoSection title="WORKS" items={works} />
         <InfoSection title="CAPABILITIES" items={capabilities} />
         <InfoSection title="TECHNOLOGIES" items={technologies} />
         <InfoSection title="EDUCATION" items={education} />
-        <AboutSection title="ABOUT" paragraphs={aboutParagraphs} className="flex-grow" />
+        <AboutSection title="ABOUT" paragraphs={aboutParagraphs} />
+        <InfoSection title="CONTACT" items={contact} />
       </div>
       <div className="flex gap-[155px] relative mt-6 px-6 py-0 top-[scroll]">
         {Array(13)

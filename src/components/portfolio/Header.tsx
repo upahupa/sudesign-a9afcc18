@@ -1,3 +1,4 @@
+
 import React from "react";
 import InfoSection from "./InfoSection";
 import AboutSection from "./AboutSection";
@@ -59,13 +60,45 @@ const Header: React.FC = () => {
 
   return (
     <header>
-      <div className="flex gap-6 px-6 py-9 max-md:flex-wrap max-sm:px-4 max-sm:py-6">
+      <div className="flex flex-wrap gap-6 px-6 py-9 max-md:flex-wrap max-sm:px-4 max-sm:py-6">
         <InfoSection title="WORKS" items={works} />
         <InfoSection title="CAPABILITIES" items={capabilities} />
         <InfoSection title="TECHNOLOGIES" items={technologies} />
         <InfoSection title="EDUCATION" items={education} />
-        <AboutSection title="ABOUT" paragraphs={aboutParagraphs} />
-        <InfoSection title="CONTACT" items={contact} />
+        
+        <div className="flex flex-col gap-6 w-[624px] max-md:w-full">
+          <div className="flex w-full">
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5 w-[312px] p-3">
+              ABOUT
+            </div>
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5 w-[312px] p-3">
+              CONTACT
+            </div>
+          </div>
+          
+          <div className="flex w-full">
+            <div className="flex flex-col gap-[22px] w-[624px] px-3">
+              {aboutParagraphs.map((paragraph, index) => (
+                <div
+                  key={index}
+                  className="text-[13px] text-[#1C1C1C] leading-[17px]"
+                >
+                  {paragraph}
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="flex flex-col gap-px px-3 mt-[-12px]">
+            {contact.map((item, index) => (
+              <div key={index}>
+                <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
+                  {item.title}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="flex gap-[155px] relative mt-6 px-6 py-0 top-[scroll]">
         {Array(13)

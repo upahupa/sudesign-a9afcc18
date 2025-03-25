@@ -3,7 +3,6 @@ import React from "react";
 import ProjectDetail from "./ProjectDetail";
 import ProjectCarousel from "./ProjectCarousel";
 import { hasProjectImages, getProjectImages, shouldIncludeYoutubeVideo } from "./projectImageData";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ProjectCardProps {
   project: {
@@ -29,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
       <div className="flex gap-px max-md:flex-col max-sm:mt-3">
         {showCarousel ? (
-          <div className="w-[1248px] max-md:w-full">
+          <div className="w-auto">
             <ProjectCarousel 
               projectName={project.name} 
               images={projectImages} 

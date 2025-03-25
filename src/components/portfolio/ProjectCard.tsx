@@ -27,6 +27,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const isHalo = project.name === "Halo";
   // Check if this is the Craft Victoria project
   const isCraftVictoria = project.name === "Craft Victoria";
+  // Check if this is the Port Fairy Folk Festival project
+  const isPortFairy = project.name === "Port Fairy Folk Festival";
   
   return <div className="w-full mb-3">
       <div className="flex mb-3 justify-between max-md:flex-wrap">
@@ -83,6 +85,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
             <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
               The design evoked a sense of materiality, reflecting Craft Victoria's diverse engagement with various materials. It created a past-future dichotomy, blending traditional craftsmanship with modern computer-assisted designs, while ensuring legibility and clarity in the format of an annual review.
+            </div>
+          </div>
+        : isPortFairy ? <div className="w-[624px] aspect-[16/9] max-md:w-full p-4 overflow-y-auto bg-white py-[17px]">
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+              BRIEF
+            </div>
+            <div className="text-[13px] text-[#1C1C1C] leading-[17px] mb-4">
+              The Port Fairy Folk Festival is a long-running music event featuring top folk acts from Australia and worldwide. This project involved creating a guidebook publication, poster, and website prototype for the festival.
+            </div>
+            
+            <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+              RATIONALE
+            </div>
+            <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
+              The design incorporated seaside and playful nautical themes to align with the festival's family-friendly approach. The map design balanced usability with the brand's identity, ensuring both functionality and visual coherence.
             </div>
           </div>
         : <div className="w-[624px] aspect-[16/9] bg-[#E3E3E3] max-md:w-full" />}

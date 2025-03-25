@@ -26,9 +26,9 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
     <Carousel className="w-full">
       <CarouselContent>
         {images.map((image, index) => {
-          // Check if this is the Port Fairy map image
+          // Check if this is the Port Fairy map image (now the 4th image)
           const isPortFairyMap = projectName === "Port Fairy Folk Festival" && 
-                                image.includes("d24f8533-215e-4280-b160-35d98f6c3961");
+                                index === 3;
 
           return (
             <CarouselItem key={index}>
@@ -37,7 +37,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                   <img 
                     src={image} 
                     alt={`${projectName} image ${index + 1}`} 
-                    className={`${isPortFairyMap ? 'object-contain w-full h-full' : 'object-cover w-full h-full'} rounded-none`}
+                    className="object-cover w-full h-full rounded-none"
                   />
                 </div>
               </AspectRatio>

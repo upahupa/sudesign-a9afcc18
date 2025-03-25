@@ -18,6 +18,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const showCarousel = hasProjectImages(project.name);
   const projectImages = getProjectImages(project.name);
   const includeYoutubeVideo = shouldIncludeYoutubeVideo(project.name);
+  
+  // Check if this is the National Bowel Cancer Screening Program
+  const isNBCSP = project.name === "National Bowel Cancer Screening Program";
 
   return (
     <div className="w-full mb-3">
@@ -41,6 +44,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         )}
         <div className="w-[624px] aspect-[16/9] bg-[#E3E3E3] max-md:w-full" />
       </div>
+      
+      {/* Add brief and rationale for National Bowel Cancer Screening Program */}
+      {isNBCSP && (
+        <div className="mt-6 px-3">
+          <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+            BRIEF
+          </div>
+          <div className="text-[13px] text-[#1C1C1C] leading-[17px] mb-4">
+            The Aikenhead Centre for Medical Discovery (ACMD) partnered with Swinburne to improve the National Bowel Cancer Screening Program (NBSP) by enhancing user-centered design and increasing participation rates.
+          </div>
+          
+          <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
+            RATIONALE
+          </div>
+          <div className="text-[13px] text-[#1C1C1C] leading-[17px]">
+            Through ethnographic research with screening participants, we identified key barriers to user participation. Our design solutions included simplifying instructions, integrating journey mapping, and recommending digital reminders and optional drop-off locations. We developed a digital instructions prototype accessible via QR code and redesigned forms to reduce redundancy, enhance accessibility, and improve perceived anonymity.
+          </div>
+        </div>
+      )}
     </div>
   );
 };

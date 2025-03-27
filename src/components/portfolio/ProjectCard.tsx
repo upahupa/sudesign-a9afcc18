@@ -32,6 +32,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const isPortFairy = project.name === "Port Fairy Folk Festival";
   // Check if this is the Brunswick Makerspace project
   const isBrunswickMakerspace = project.name === "Brunswick Makerspace";
+  // Check if this is Anika Legal project
+  const isAnikaLegal = project.name === "Anika Legal";
   // Check if this is Anika, AGL, or Monash Gallery project
   const isFullWidthProject = 
     project.name === "Anika Legal" || 
@@ -57,6 +59,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         ) : showCarousel ? (
           <div className={isFullWidthProject ? "w-full" : "w-[1248px] max-md:w-full"}>
             <ProjectCarousel projectName={project.name} images={projectImages} includeYoutubeVideo={includeYoutubeVideo} />
+          </div>
+        ) : isAnikaLegal ? (
+          <div className="w-full">
+            <img 
+              src="/lovable-uploads/1eb4e825-eecb-4ed6-9b38-e7513a91ba34.png" 
+              alt="Anika Legal - The Problem" 
+              className="w-full h-auto"
+            />
           </div>
         ) : (
           <div className={isFullWidthProject ? "w-full h-[720px] bg-[#E3E3E3]" : "w-[1248px] h-[720px] bg-[#E3E3E3] max-md:w-full"} />

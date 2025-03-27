@@ -2,6 +2,7 @@
 import React from "react";
 import ProjectDetail from "./ProjectDetail";
 import ProjectCarousel from "./ProjectCarousel";
+import PDFViewer from "./PDFViewer";
 import { hasProjectImages, getProjectImages, shouldIncludeYoutubeVideo } from "./projectImageData";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -37,6 +38,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     project.name === "AGL" || 
     project.name === "Monash Gallery of Art";
   
+  // Example PDF URL - replace with your actual uploaded PDF URL when available
+  const pdfUrl = "/path/to/your/uploaded.pdf";
+  const showPDF = false; // Set to true when you have a PDF to display
+  
   return <div className="w-full mb-3">
       <div className="flex mb-3 justify-between max-md:flex-wrap">
         <ProjectDetail label="PROJECT" value={project.name} />
@@ -45,7 +50,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <ProjectDetail label="YEAR" value={project.year} />
       </div>
       <div className="flex gap-px max-md:flex-col max-sm:mt-3">
-        {showCarousel ? (
+        {showPDF ? (
+          <div className={isFullWidthProject ? "w-full" : "w-[1248px] max-md:w-full"}>
+            <PDFViewer pdfUrl={pdfUrl} title={`${project.name} Presentation`} />
+          </div>
+        ) : showCarousel ? (
           <div className={isFullWidthProject ? "w-full" : "w-[1248px] max-md:w-full"}>
             <ProjectCarousel projectName={project.name} images={projectImages} includeYoutubeVideo={includeYoutubeVideo} />
           </div>

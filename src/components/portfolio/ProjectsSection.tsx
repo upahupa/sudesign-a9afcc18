@@ -23,35 +23,11 @@ const ProjectsSection: React.FC = () => {
       year: "2023",
     },
     {
-      name: "Port Fairy Folk Festival",
-      service: "Rebrand",
-      type: "Portfolio",
-      year: "2023",
-    },
-    {
       name: "Brunswick Makerspace",
       service: "Rebrand",
       type: "Portfolio",
       year: "2024",
-    },
-    {
-      name: "Anika Legal",
-      service: "Service Design & UX",
-      type: "Advocacy",
-      year: "2021",
-    },
-    {
-      name: "Monash Gallery of Art",
-      service: "Strategic Design",
-      type: "Design Research",
-      year: "2021",
-    },
-    {
-      name: "AGL",
-      service: "Service Design & UX",
-      type: "Portfolio",
-      year: "2024",
-    },
+    }
   ];
 
   return (

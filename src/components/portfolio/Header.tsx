@@ -1,3 +1,4 @@
+
 import React from "react";
 import InfoSection from "./InfoSection";
 import AboutSection from "./AboutSection";
@@ -6,13 +7,8 @@ const Header: React.FC = () => {
   const works = [
     { title: "National Bowel Cancer Screening Program" },
     { title: "Craft Victoria" },
-    { title: "Port Fairy Folk Festival" },
     { title: "Halo" },
     { title: "Brunswick Makerspace" },
-    { title: "Anika Legal" },
-    { title: "Monash Gallery of Art" },
-    { title: "AGL" },
-    { title: "Climate Reality Project" },
   ];
 
   const capabilities = [

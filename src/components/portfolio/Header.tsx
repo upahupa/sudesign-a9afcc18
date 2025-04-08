@@ -55,7 +55,7 @@ const Header: React.FC = () => {
     "Additionally, Samuel's work is deeply influenced by his curiosity for culture, history, and the interconnectedness of local and digital communities. This perspective allows him to approach projects with a nuanced understanding of context, ensuring solutions that feel authentic, meaningful, and grounded in the world they serve.",
   ];
 
-  const contact = [{ title: "Email" }, { title: "Instagram" }];
+  const contact = [{ title: "upham.samuel@gmail.com" }];
 
   return (
     <header>

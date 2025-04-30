@@ -23,6 +23,12 @@ const ProjectsSection: React.FC = () => {
       year: "2023",
     },
     {
+      name: "Port Fairy Folk Festival",
+      service: "Rebrand",
+      type: "Portfolio",
+      year: "2023",
+    },
+    {
       name: "Brunswick Makerspace",
       service: "Rebrand",
       type: "Portfolio",

@@ -8,6 +8,7 @@ const Header: React.FC = () => {
     { title: "National Bowel Cancer Screening Program" },
     { title: "Craft Victoria" },
     { title: "Halo" },
+    { title: "Port Fairy Folk Festival" },
     { title: "Brunswick Makerspace" },
   ];
 

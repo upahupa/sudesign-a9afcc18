@@ -107,7 +107,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               BRIEF
             </div>
             <div className="text-[13px] text-[#1C1C1C] leading-[17px] mb-4">
-              The 2022 Annual Review for Craft Victoria aimed to showcase the organization's position as the state's authoritative body on craft, featuring a range of content including financial reviews, corporate statements, upcoming events, and featured artists.
+              The 2022 Annual Review for Craft Victoria aimed to showcase the organisation's position as the state's authoritative body on craft, featuring a range of content including financial reviews, corporate statements, upcoming events, and featured artists.
             </div>
             
             <div className="text-[9px] text-[#1C1C1C] leading-[17px] mb-1.5">
